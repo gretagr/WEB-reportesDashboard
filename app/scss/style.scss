@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #cecece;
+  color: #000;
+  font-family: 'Roboto', 'sans-serif';
+  padding: 20px;
+}
+
+main {
+  background-color: #fff;
+  padding: 20px;
+}
