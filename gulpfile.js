@@ -46,14 +46,15 @@ function scssTask(){
 
 // JS task
 
-function jsTask() {
-  return src(files.jsPath)
-    .pipe(concat('scripts.js'))
-    .pipe(uglify())
-    .pipe(dest('dist'))
-    .pipe( browserSync.stream()
-  );
-}
+// function jsTask() {
+//   return src(files.jsPath)
+//     .pipe(concat('scripts.js'))
+//     .pipe(uglify())
+//     .pipe(dest('dist'))
+//     .pipe( browserSync.stream()
+//   );
+// }
+
 // Cachebusting task
 
 const cbString = new Date().getTime();
@@ -68,15 +69,15 @@ function cacheBustTask() {
 // Watch task
 
 function watchTask(){
-  watch([files.scssPath, files.jsPath, files.htmlPath],
-    parallel(browserSyncTask, scssTask, jsTask)
+  watch([files.scssPath, files.htmlPath],
+    parallel(browserSyncTask, scssTask)
   );
 }
 
 // Default task
 
 exports.default = series(
-  parallel(browserSyncTask, scssTask, jsTask),
+  parallel(browserSyncTask, scssTask),
   cacheBustTask,
   watchTask
 );

@@ -1,0 +1,233 @@
+/* ===================================================================
+========================= SIDEBAR STYLES ==============================*/
+@import "variables";
+@import "mixins";
+
+
+// hides scrollbar
+::-webkit-scrollbar {
+    position: relative;
+    left: 10px;
+}
+
+aside {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 30px 50px;
+  top: 0;
+  width: 45%;
+  z-index: 99;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  right: 0;
+  transform: translateX(100%);
+  transition: all .5s ease-in;
+
+  @media (max-width: $phone) {
+    padding: 20px 15px;
+    width: 90%;
+  }
+
+  &.active { // show sidebar
+    transform: translateX(0);
+    transition: transform .5s ease-in;
+    @media (max-width: $small-desktop) {
+      width: 55%;
+    }
+    @media (max-width: $tablet) {
+      width: 85%;
+      top: 50px;
+      right: 7.5%;
+    }
+  }
+
+
+
+  @include user-profile;
+
+  h2 {
+    font-size: $font-size-medium + 0.4;
+    width: 100%;
+    margin: 0;
+  }
+
+  .form-field-description {
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin: 10px 0 10px 0 ;
+    width: 100%;
+  }
+
+  .twitter-user,
+  .checkbox-container {
+    width: 45%;
+    @media (max-width: $phone) {
+      width: 100%;
+    }
+  }
+
+  .twitter-user {
+    justify-content: flex-start;
+  }
+
+  @include custom-checkbox;
+
+  .auto {
+    .autoreply {
+      top: 25%;
+      left: 25%;
+      @media (max-width: $phone) {
+        left: 0;
+      }
+    }
+  }
+
+  button {
+    background: none;
+    border: 1px solid $light-grey;
+    border-radius: $border-radius-small;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    color: $dark-grey;
+    cursor: pointer;
+
+    i {
+      color: $light-grey;
+      margin-right: 10px;
+    }
+  }
+
+  textarea {
+    background: none;
+    border: 1px solid $light-grey;
+    border-radius: $border-radius-small;
+    padding: 10px;
+    width: 100%;
+    height: 240px;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    color: $dark-grey;
+  }
+
+  .date {
+    position: relative;
+    margin-top: 18px;
+    margin-left: 20px;
+    width: 60%;
+    @media (max-width: $phone) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 35px;
+    }
+
+    .arrow {
+      border: solid $dark-grey;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      position: absolute;
+      right: 10px;
+      top: calc(50%-3px);
+    }
+  }
+
+.today {
+  .autoreply {
+    top: 30px;
+    left:  0;
+  }
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: $border-radius-small;
+  background-image: url("images/map-placeholder.jpg");
+
+  .map-search {
+    position: relative;
+    margin: 5px;
+    padding: 10px 10px 10px 40px;
+    width: calc(100% - 10px);
+    border-radius: $border-radius-small;
+    border: 1px solid $light-grey;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    color: $dark-grey;
+    }
+
+    i {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .map-marker {
+      position: absolute;
+      top: calc(50% - 50px;);
+      left: calc(50%- 50px);
+      width: 50px;
+      height: 50px;
+      background: $red;
+      border-radius: $border-radius-small;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 12px solid $red;
+        margin-left: 14px;
+      }
+
+      i {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        color: rgba($background-white, 0.7);
+      }
+    }
+  }
+
+  .centered-text {
+    width: 100%;
+    text-align: center;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: $light-grey;
+    margin-bottom: 30px;
+  }
+
+  .submit-sidebar-form {
+    background: $green;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    color: $background-white;
+    border: none;
+    border-radius: $border-radius-small;
+    margin-bottom: 60px;
+  }
+}

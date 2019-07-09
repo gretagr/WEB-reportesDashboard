@@ -1,33 +1,333 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Starter project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-    <link rel="stylesheet" href="dist/style.css?cb=1555181993064">
+    <title>Reportes Via Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link To Google Fonts -------------------------------------->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <!-- Link To Main StyleSheet ------------------------------------>
+    <link rel="stylesheet" href="dist/style.css?cb=1562677796258">
+
+    <!-- Link To Font Awesome  -------------------------------------->
+    <script src="https://kit.fontawesome.com/3a0cdd4eca.js"></script>
   </head>
+
   <body>
-    <main>
+  <div id="overlay"></div>
+
+
+<!-- Header Of the page  --------------------------------------------->
+
       <header>
+        <!-- Logo Area ----------------------------------------------->
+
+        <div class="logo">
+          <p>INTELIGENTUS<span>DASHBOARD</span></p>
+        </div>
+
+        <!-- User Area ----------------------------------------------->
+
+        <div class="profile">
+          <img class="profile-image" src="dist/images/profile1.png" alt="">
+          <p>Maria Rosario</p>
+          <span class="profile-arrow"></span>
+        </div>
+
+        <!-- Main navigation ------------------------------------------>
+
         <nav>
 
+          <ul id="main-nav" class="inactive">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#" class="active">Reportes</a></li>
+            <li><a href="#">Tweets</a></li>
+            <li><a href="#">Transparencia</a></li>
+            <li><a href="#">Comunicados</a></li>
+            <li><a href="#">Servicios</a></li>
+          </ul>
+          <span class="menu" id="menu"></span>
         </nav>
-      </header>
-      <section>
-        <h1>Starter project test</h1>
-        <p>boilerplate project with gulp</p>
-        <ul>
-          <li>BrowserSync</li>
-          <li>Sass</li>
-          <li>Cssnano</li>
-          <li>Uglify</li>
-        </ul>
-      </section>
-      <footer>
 
+      </header>
+
+      <!-- Sliding sidebar -------------------------------------------------->
+
+          <div class="wrapper">
+              <aside id="sidebar">
+
+                <!-- sidebar close button -->
+
+                <div class="close-button"><span id="close" class="close"></span></div>
+              <h2>Creacion de Reporte</h2>
+              <p class="form-field-description">Usuario del reporte</p>
+
+              <!-- user information ------------------------------------------>
+
+              <div class="twitter-user">
+                <div class="user-image"></div>
+                <p class="user-name">Eduardo H. <br >
+                  <span class="user-nickname">@eduaroh53</span>
+                </p>
+              </div>
+
+              <!-- Autoreply checkbox ---------------------------------------->
+
+              <div class="chackbox-container auto">
+                <label class="autoreply"><span class="name">Autoresponder a usuario</span>
+                  <input type="checkbox" name="autoreply" checked="checked">
+                  <span class="check-icon"></span>
+                </label>
+              </div>
+
+              <!-- Select Category ------------------------------------------->
+
+              <p class="form-field-description">¿En que te podemos ayudar?</p>
+              <button><i class="fas fa-exclamation-circle"></i>Selecciona una categoria</button>
+
+              <!-- Report Description ---------------------------------------->
+
+              <p class="form-field-description">Describe la situacion de manera breve</p>
+              <textarea name="description" placeholder="Escribe una description del problema"></textarea>
+
+              <!-- Select Date ----------------------------------------------->
+
+              <p class="form-field-description">Fecha</p>
+              <div class="chackbox-container today">
+                <label class="autoreply"><span class="name">Sucedio Hoy</span>
+                  <input type="checkbox" name="happened-today" checked="checked">
+                  <span class="check-icon"></span>
+                </label>
+              </div>
+              <button class="date"><i class="fas fa-calendar-day"></i> Seleccionar otra Fecha <span class="arrow"></span></button>
+
+              <!-- Select Place ----------------------------------------------->
+
+              <p class="form-field-description">Direccion</p>
+
+              <div class="map-container">
+                <div class="map-marker">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                  <input class="map-search" type="text" name="location-search" placeholder="Escribe la direcction">
+                  <i class="fas fa-map-marker-alt"></i>
+              </div>
+
+              <!-- Photos ----------------------------------------------->
+
+              <p class="form-field-description">Fotografias</p>
+              <p class="centered-text">Sin Fotografias</p>
+
+              <input class="submit-sidebar-form" type="submit" name="send-report" value="Crear Reporte">
+            </aside>
+            </div>
+
+<!-- End Of sidebar --------------------------------------------------->
+<!-- Search section --------------------------------------------------->
+
+      <section class="search-tweets">
+        <h1>REPORTES VIA TWITTER</h1>
+        <p class="search-description">Encuaentra hashtags o menciones a otras cuentas para generar un reporte.<p>
+        <p class="search-name">Buscar tweets</p>
+        <input type="text" name="hashtags" placeholder="@delegaciontlalpan">
+        <input type="submit" name="search-hashtags" value="Buscar Tweets">
+      </section>
+
+<!-- Search results section -------------------------------------->
+
+      <section class="search-results">
+      <p><span id="search-results-count">192</span> Tweets encontrados</p>
+
+<!-- Container for single posts ----------------------------------->
+
+      <div class="results-container">
+
+        <!-- Single Post ------------------------------------------>
+
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <p class="hide">Ocultar</p>
+            <p class="reply">Responder</p>
+            <p class="create-report">Crear Reporte</p>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+        <div class="tweet">
+
+
+          <div class="twitter-user">
+            <div class="user-image"></div>
+            <p class="user-name">Eduardo H. <br >
+            <span class="user-nickname">@eduaroh53</span>
+            </p>
+
+          </div>
+          <p class="post-date">Hace 2 dias</p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+
+          <div class="actions">
+            <a href="#" class="hide">Ocultar</a>
+            <a href="#" class="reply">Responder</a>
+            <a href="#" class="create-report">Crear Reporte</a>
+          </div>
+        </div>
+
+
+      </div>
+      </section>
+
+<!-- Pages List ---------------------------------------------------->
+
+      <section class="pages">
+        <p class="page active">1</p>
+        <p class="page">2</p>
+        <p class="page">3</p>
+        <p class="page">...</p>
+        <p class="page">Siguiente</p>
+      </section>
+
+<!-- Footer Of the page --------------------------------------------->
+
+      <footer>
+        <p class="copyright">Gobierno de Mexico 2019 ©</p>
+        <ul>
+          <li><a href="#">Ayuda</a></li>
+          <li><a href="#">Politica de Privacidad</a></li>
+        </ul>
       </footer>
-    </main>
-    <script src="dist/scripts.js?cb=1555181993064"></script>
+
+    <!-- Link To JavaScript file ------------------------------------>
+
+    <script src="dist/js/script.js"></script>
   </body>
 </html>

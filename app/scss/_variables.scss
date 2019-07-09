@@ -1,0 +1,44 @@
+
+/* --------------------------------------------------------------------
+VARIABLES: colors -----*/
+
+$dark-grey: #30333b;
+$light-grey: #a7a8af;
+$background-grey: #f6f8fc;
+$background-white: #fff;
+$blue: #19aafd;
+$red: #bc6f6a;
+$green: #28cf6b;
+
+$box-shadow-big: 0px 15px 10px -15px $light-grey;
+$box-shadow-small: 0 0 1px $light-grey;
+
+/* --------------------------------------------------------------------
+VARIABLES: fonts -----*/
+
+$font-size-heading: 1.6em;
+$font-size-medium: 1em;
+$font-size-small: 0.8em;
+
+$font-weight-normal: 600;
+$font-weight-semi-bold: 700;
+$font-weight-bold: 800;
+$font-weight-extra: 900;
+
+/* --------------------------------------------------------------------
+VARIABLES: spacing & sizing -----*/
+
+$main-spacing-sides: 50px;
+$main-spacing-bottom-top: 10px;
+$border-radius-small: 5px;
+$border-radius-circle: 50%;
+
+/*
+
+/* --------------------------------------------------------------------
+VARIABLES: media sizes -----*/
+
+$medium-desktop: 1240px;
+$small-desktop: 1180px;
+$tablet: 870px;
+$phone: 670px;
