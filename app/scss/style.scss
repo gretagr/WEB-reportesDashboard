@@ -12,10 +12,12 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+  overflow-x: inherit;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   background-color: $background-grey;
   width: 100vw;
   height: 100%;
+  overflow-x: hidden;
 }
 
 // sidebar overlay

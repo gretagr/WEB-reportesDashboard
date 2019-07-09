@@ -9,7 +9,9 @@
     position: relative;
     left: 10px;
 }
-
+.wrapper {
+  overflow-x: hidden;
+}
 aside {
   position: absolute;
   display: flex;

@@ -3,7 +3,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+// const cssnano = require('cssnano');
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const replace = require('gulp-replace');
@@ -37,7 +37,7 @@ function scssTask(){
   return src(files.scssPath)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss([ autoprefixer(), cssnano() ]))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist'))
     .pipe( browserSync.stream()
