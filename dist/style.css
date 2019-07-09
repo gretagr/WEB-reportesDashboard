@@ -50,9 +50,6 @@ VARIABLES: media sizes -----*/
   position: relative;
   left: 10px; }
 
-.wrapper {
-  overflow-x: hidden; }
-
 aside {
   position: absolute;
   display: flex;
@@ -294,12 +291,10 @@ html {
   font-size: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
 
 *, *:before, *:after {
-  box-sizing: inherit;
-  overflow-x: inherit; }
+  box-sizing: inherit; }
 
 body {
   position: relative;
