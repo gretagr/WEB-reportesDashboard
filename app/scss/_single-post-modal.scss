@@ -1,0 +1,115 @@
+@import "variables";
+@import "mixins";
+
+// single post styling
+
+.tweet {
+  // three column layout with margin of 10px
+
+  @include flex-space-between;
+  font-size: $font-size-medium;
+  width: calc(33% - 10px);
+  margin-bottom: 20px;
+  background-color: $background-white;
+  padding: 20px;
+  border-radius: $border-radius-small;
+  box-shadow: $box-shadow-small;
+  transition: all 0.3s ease;
+
+  // two column layput with margin of 20px
+  @media (max-width: $small-desktop) {
+    width: calc(50% - 20px);
+    margin-bottom: 40px;
+  }
+
+  // one column layout with margin of 50 on the sides
+  @media (max-width: $tablet) {
+    width: calc(100% - 50px);
+    margin-bottom: 20px;
+  }
+
+  // one column layout without side margin
+  @media (max-width: $phone) {
+    width: 100%;
+  }
+
+  @include user-profile;
+
+  p {
+    line-height: 24px;
+  }
+
+  .post-date {
+    color: $light-grey;
+    text-align: right;
+    width: 50%;
+  }
+
+  .post-body {
+    font-weight: $font-weight-normal;
+    margin: 0;
+
+    span {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+/* Single Post buttons styling */
+  .actions {
+    @include flex-space-between;
+    width: 100%;
+
+    @media (max-width: $small-desktop) {
+      justify-content: space-around;
+    }
+
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .hide {
+      color: $red;
+      transition: color 0.3s ease;
+      margin-right: 15%;
+      &:visited {
+        color: $red;
+      }
+      &:hover {
+        transition: color 0.3s ease;
+        color: darken($red, 15%);
+      }
+
+      @media (max-width: $tablet) {
+        padding-top: 25px;
+        margin-right: 30%;
+      }
+
+      @media (max-width: $phone) {
+        margin-right: 0;
+      }
+    }
+
+    .reply,
+    .create-report {
+      color: $blue;
+      text-align: right;
+      transition: color 0.3s ease;
+
+      &:visited {
+        color: $blue;
+      }
+
+      &:hover {
+        color: darken($blue, 15%);
+        transition: color 0.3s ease;
+      }
+
+      @media (max-width: $tablet) {
+        padding-top: 25px;
+      }
+    }
+  }
+}

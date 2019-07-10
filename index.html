@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Reportes Via Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scalable=1, user-scalable=no">
 
     <!-- Link To Google Fonts -------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=latin-ext" rel="stylesheet">
 
     <!-- Link To Main StyleSheet ------------------------------------>
-    <link rel="stylesheet" href="dist/style.css?cb=1562680677814">
+    <link rel="stylesheet" href="dist/style.css?cb=1562796249891">
 
     <!-- Link To Font Awesome  -------------------------------------->
     <script src="https://kit.fontawesome.com/3a0cdd4eca.js"></script>
@@ -20,7 +20,7 @@
 
 
 <!-- Header Of the page  --------------------------------------------->
-
+<div class="wrapper">
       <header>
         <!-- Logo Area ----------------------------------------------->
 
@@ -40,42 +40,42 @@
 
         <nav>
 
-          <ul id="main-nav" class="inactive">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#" class="active">Reportes</a></li>
-            <li><a href="#">Tweets</a></li>
-            <li><a href="#">Transparencia</a></li>
-            <li><a href="#">Comunicados</a></li>
-            <li><a href="#">Servicios</a></li>
+          <ul id="main-nav">
+            <li class="nav-item" ><a href="#">Dashboard</a></li>
+            <li class="nav-item" ><a href="#" class="active">Reportes</a></li>
+            <li class="nav-item" ><a href="#">Tweets</a></li>
+            <li class="nav-item" ><a href="#">Transparencia</a></li>
+            <li class="nav-item" ><a href="#">Comunicados</a></li>
+            <li class="nav-item" ><a href="#">Servicios</a></li>
           </ul>
-          <span class="menu" id="menu"></span>
+          <div class="menu" id="menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+          </div>
+
         </nav>
 
       </header>
 
       <!-- Sliding sidebar -------------------------------------------------->
 
-          <div class="wrapper">
               <aside id="sidebar">
 
                 <!-- sidebar close button -->
-
                 <div class="close-button"><span id="close" class="close"></span></div>
               <h2>Creacion de Reporte</h2>
               <p class="form-field-description">Usuario del reporte</p>
 
-              <!-- user information ------------------------------------------>
+              <!-- user information, Autoreply checkbox ----------------------->
+              <div class="input-wrapper">
+                <div class="twitter-user">
+                  <img class="twitter-user-image" src="dist/images/profile.png">
+                  <p class="user-name">Eduardo H. <br >
+                    <span class="user-nickname">@eduaroh53</span>
+                  </p>
+                </div>
 
-              <div class="twitter-user">
-                <div class="user-image"></div>
-                <p class="user-name">Eduardo H. <br >
-                  <span class="user-nickname">@eduaroh53</span>
-                </p>
-              </div>
-
-              <!-- Autoreply checkbox ---------------------------------------->
-
-              <div class="chackbox-container auto">
                 <label class="autoreply"><span class="name">Autoresponder a usuario</span>
                   <input type="checkbox" name="autoreply" checked="checked">
                   <span class="check-icon"></span>
@@ -83,7 +83,6 @@
               </div>
 
               <!-- Select Category ------------------------------------------->
-
               <p class="form-field-description">¿En que te podemos ayudar?</p>
               <button><i class="fas fa-exclamation-circle"></i>Selecciona una categoria</button>
 
@@ -93,18 +92,16 @@
               <textarea name="description" placeholder="Escribe una description del problema"></textarea>
 
               <!-- Select Date ----------------------------------------------->
-
               <p class="form-field-description">Fecha</p>
-              <div class="chackbox-container today">
+              <div class="input-wrapper">
                 <label class="autoreply"><span class="name">Sucedio Hoy</span>
                   <input type="checkbox" name="happened-today" checked="checked">
                   <span class="check-icon"></span>
                 </label>
+                <button class="date"><i class="fas fa-calendar-day"></i> Seleccionar otra Fecha <span class="arrow"></span></button>
               </div>
-              <button class="date"><i class="fas fa-calendar-day"></i> Seleccionar otra Fecha <span class="arrow"></span></button>
 
               <!-- Select Place ----------------------------------------------->
-
               <p class="form-field-description">Direccion</p>
 
               <div class="map-container">
@@ -122,7 +119,6 @@
 
               <input class="submit-sidebar-form" type="submit" name="send-report" value="Crear Reporte">
             </aside>
-            </div>
 
 <!-- End Of sidebar --------------------------------------------------->
 <!-- Search section --------------------------------------------------->
@@ -142,166 +138,28 @@
 
 <!-- Container for single posts ----------------------------------->
 
-      <div class="results-container">
+      <div id="search-results" class="results-container">
 
-        <!-- Single Post ------------------------------------------>
+        <!-- Single Post is crated dynamically via JavaScrip. This is original single post markup, if needed:
 
         <div class="tweet">
           <div class="twitter-user">
-            <div class="user-image"></div>
+            <div class="twitter-user-image"></div>
             <p class="user-name">Eduardo H. <br >
             <span class="user-nickname">@eduaroh53</span>
             </p>
-
           </div>
           <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
+          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span></p>
 
           <div class="actions">
-            <p class="hide">Ocultar</p>
-            <p class="reply">Responder</p>
-            <p class="create-report">Crear Reporte</p>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
-          </div>
-        </div>
-        <div class="tweet">
-
-
-          <div class="twitter-user">
-            <div class="user-image"></div>
-            <p class="user-name">Eduardo H. <br >
-            <span class="user-nickname">@eduaroh53</span>
-            </p>
-
-          </div>
-          <p class="post-date">Hace 2 dias</p>
-          <p class="post-body">Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible<br ><span>@GobiernoAcapozalcoOficial</span><p>
-
-          <div class="actions">
-            <a href="#" class="hide">Ocultar</a>
-            <a href="#" class="reply">Responder</a>
-            <a href="#" class="create-report">Crear Reporte</a>
+            <a class="hide">Ocultar</a>
+            <a class="reply">Responder</a>
+            <a class="create-report">Crear Reporte</a>
           </div>
         </div>
 
+        ------------------------------------------>
 
       </div>
       </section>
@@ -327,7 +185,7 @@
       </footer>
 
     <!-- Link To JavaScript file ------------------------------------>
-
+</div>
     <script src="dist/js/script.js"></script>
   </body>
 </html>

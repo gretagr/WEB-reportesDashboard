@@ -1,7 +1,7 @@
 @import "variables";
 
 
-@mixin flex {
+@mixin flex-space-between {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -13,6 +13,17 @@
   flex-wrap: wrap;
 }
 
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 
 @mixin user-profile {
 
@@ -22,12 +33,11 @@
     align-items: center;
     width: 50%;
 
-    .user-image {
+    .twitter-user-image {
       width: 50px;
       height: 50px;
       min-width: 50px;
       border-radius: $border-radius-circle;
-      background-image: url("images/profile.png");
       margin-right: 10px;
     }
 
@@ -43,14 +53,17 @@
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
-    padding-bottom: 0;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    .name {
+      position: relative;
+      top: -2px;
+    }
 
     input {
       position: absolute;

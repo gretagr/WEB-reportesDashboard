@@ -1,0 +1,82 @@
+/* --------------------------------------------------------------------
+VARIABLES: colors -----*/
+/* --------------------------------------------------------------------
+VARIABLES: fonts -----*/
+/* --------------------------------------------------------------------
+VARIABLES: spacing & sizing -----*/
+/*
+
+/* --------------------------------------------------------------------
+VARIABLES: media sizes -----*/
+.name {
+  font-size: 0.8em; }
+
+/* --------------------------------------------------------------------
+VARIABLES: colors -----*/
+/* --------------------------------------------------------------------
+VARIABLES: fonts -----*/
+/* --------------------------------------------------------------------
+VARIABLES: spacing & sizing -----*/
+/*
+
+/* --------------------------------------------------------------------
+VARIABLES: media sizes -----*/
+/* ===================================================================
+========================= SEARCH STYLES ==============================*/
+h1 {
+  font-weight: 900;
+  font-size: 1.6em; }
+
+.search-tweets {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 15px 10px -15px #a7a8af;
+  font-weight: 800;
+  padding: 50px; }
+  @media (max-width: 670px) {
+    .search-tweets {
+      padding: 20px; } }
+  .search-tweets h1 {
+    width: 100%;
+    margin: 0; }
+  .search-tweets .search-description {
+    color: #a7a8af; }
+  .search-tweets input {
+    height: 75px;
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    font-weight: 800; }
+    .search-tweets input:focus, .search-tweets input:active {
+      outline: none; }
+  .search-tweets input[type="text"] {
+    width: 60%;
+    background: none;
+    border: 1px solid #a7a8af;
+    padding-left: 10px; }
+    .search-tweets input[type="text"]::-webkit-input-placeholder {
+      color: #30333b; }
+    .search-tweets input[type="text"]:-ms-input-placeholder {
+      color: #30333b; }
+    .search-tweets input[type="text"]::-ms-input-placeholder {
+      color: #30333b; }
+    .search-tweets input[type="text"]::placeholder {
+      color: #30333b; }
+    @media (max-width: 870px) {
+      .search-tweets input[type="text"] {
+        width: 100%; } }
+  .search-tweets input[type="submit"] {
+    margin-left: 20px;
+    cursor: pointer;
+    width: 17%;
+    min-width: 190px;
+    background: #19aafd;
+    border: 1px solid #19aafd;
+    color: #fff; }
+    @media (max-width: 870px) {
+      .search-tweets input[type="submit"] {
+        margin-top: 10px;
+        width: 100%;
+        margin: 10px 0 0 0; } }
+
+/*# sourceMappingURL=search-block.css.map */

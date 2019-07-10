@@ -1,0 +1,47 @@
+@import "mixins";
+@import "variables";
+
+/* ===================================================================
+========================= POST PAGES NAVIGATION ======================*/
+
+.pages {
+  width: 100%;
+  padding: $main-spacing-bottom-top $main-spacing-sides;
+  @include flex-end;
+  margin-bottom: 30px;
+
+  @media (max-width: $tablet) {
+    justify-content: center;
+  }
+
+  // single button styles
+
+  .page {
+    background-color: $background-white;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: $border-radius-small;
+    box-shadow: $box-shadow-small;
+    margin: 0;
+    margin-left: 10px;
+    font-weight: $font-weight-semi-bold;
+    transition: background-color 0.3s ease;
+    @include flex-centered;
+
+    @media (max-width: $tablet) {
+      padding: 10px 15px;
+    }
+
+    &:hover {
+      background-color: darken($background-white, 10%);
+      transition: background-color 0.3s ease;
+    }
+
+    // add active class to currrent page
+
+    &.active {
+      color: #fff;
+      background-color: $dark-grey;
+    }
+  }
+}

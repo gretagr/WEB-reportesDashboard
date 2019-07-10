@@ -1,3 +1,11 @@
+/* --------------------------------------------------------------------
+VARIABLES: font-family */
+
+/* proxima soft is Licensed Adobe font, which is used in the original design */
+$proxima-soft: proxima-soft, sans-serif;
+
+/*Nunito is similar to proxima soft font. It is free google font */
+$nunito: Nunito, sans-serif;
 
 /* --------------------------------------------------------------------
 VARIABLES: colors -----*/
@@ -10,13 +18,14 @@ $blue: #19aafd;
 $red: #bc6f6a;
 $green: #28cf6b;
 
-$box-shadow-big: 0px 15px 10px -15px $light-grey;
+$box-shadow-big: 0px 15px 10px -15px lighten($light-grey, 15%);
 $box-shadow-small: 0 0 1px $light-grey;
 
 /* --------------------------------------------------------------------
 VARIABLES: fonts -----*/
 
 $font-size-heading: 1.6em;
+$font-size-big: 1.4em;
 $font-size-medium: 1em;
 $font-size-small: 0.8em;
 
@@ -29,7 +38,7 @@ $font-weight-extra: 900;
 VARIABLES: spacing & sizing -----*/
 
 $main-spacing-sides: 50px;
-$main-spacing-bottom-top: 10px;
+$main-spacing-bottom-top: 20px;
 $border-radius-small: 5px;
 $border-radius-circle: 50%;
 
@@ -41,4 +50,5 @@ VARIABLES: media sizes -----*/
 $medium-desktop: 1240px;
 $small-desktop: 1180px;
 $tablet: 870px;
+$navigation-break-point: 780px;
 $phone: 670px;

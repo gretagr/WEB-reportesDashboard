@@ -1,0 +1,244 @@
+@import "mixins";
+@import "variables";
+
+/* ===================================================================
+========================= HEADER STYLES ==============================
+
+1. Logo area
+2. User area
+3. Main navigation
+4. Hamburer menu icon
+
+=====================================================================*/
+
+header {
+  width: 100%;
+  @include flex-space-between;
+  background-color: $background-white;
+
+/* ========== 1. LOGO AREA ========== */
+
+  .logo {
+    margin-left: $main-spacing-sides;
+    font-weight: $font-weight-extra;
+    height: 85px;
+
+    @media (max-width: $phone) {
+      margin-left: 15px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 85px;
+
+      span {
+        font-size: $font-size-small + .1;
+        color: $light-grey;
+        margin-left: 5px;
+
+        @media (max-width: $phone) {
+          margin: 5px;
+        }
+
+        /* Adds Line before "dashbord" */
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: $font-size-small - .1;
+          margin-left: 5px;
+          margin-right: 2px;
+          background-color: $light-grey;
+        }
+      }
+    }
+  }
+
+/* =========== 1. PROFILE AREA ============ */
+
+  .profile {
+    @include flex-end;
+    margin-right: $main-spacing-bottom-top + 10px;
+    font-weight: $font-weight-semi-bold;
+    align-items: center;
+    cursor: pointer;
+
+    // hide profile name and dropdow when on mobile.
+    @media (max-width: $phone) {
+      margin-right: 15px;
+      
+      p,
+      .profile-arrow {
+        display: none;
+      }
+    }
+
+    .profile-image {
+      width: 50px;
+      height: 50px;
+      border-radius: $border-radius-circle;
+      margin-right: $main-spacing-bottom-top - 10px;
+
+      @media (max-width: $phone) {
+        margin: 5px;
+      }
+    }
+
+    .profile-arrow {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $dark-grey;
+      margin-left: $main-spacing-bottom-top - 8px;
+    }
+}
+/* =========== 1. MAIN NAVIGATION =========== */
+
+  nav {
+    width: 100%;
+    height: 85px;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    @include flex-start;
+    background-color: $dark-grey;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      @include flex-start;
+      align-items: center;
+      list-style-type: none;
+      height: 85px;
+      padding-left: $main-spacing-sides;
+
+      li {
+        display: inline-block;
+        margin-left: 15px;
+
+        a {
+          cursor: pointer;
+          color: #fff;
+          text-decoration: none;
+          font-size: $font-size-big;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: $blue;
+          }
+
+          // add active class to current page - active page link will be displayed blue
+
+          &.active {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  // hamburger menu icon
+
+  .menu {
+    position: relative;
+    cursor: pointer;
+    top: -29px;
+    display: none;
+    height: 26px;
+    width: 26px;
+
+    // menu icon appears when screen is 780px o smaller
+
+    @media (max-width: $navigation-break-point) {
+    display: block;
+    }
+
+    &.toggle > .line1 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    &.toggle > .line2 {
+      opacity: 0;
+    }
+
+    &.toggle > .line3 {
+
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .line1, .line2, .line3 {
+      position: absolute;
+      display: block;
+      width: 26px;
+      height: 2px;
+      margin: 5px;
+      background-color: $background-white;
+      transition: all 0.3s ease;
+    }
+
+    .line1 {
+      top: 8px;
+    }
+
+    .line3 {
+      top: -8px;
+    }
+  }
+
+
+//navigation styles when 880px and less
+
+@media (max-width: $navigation-break-point) {
+
+  nav {
+    position: relative;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    padding-right: 30px;
+
+    ul {
+      position: absolute;
+      background-color: $dark-grey;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-end;
+      right: 0;
+      padding: 0;
+      margin: 0;
+      height: 0;
+      transition: height 0.5s ease-in;
+
+        li {
+        opacity: 0;
+        padding-right: 30px;
+        display: none;
+        }
+        // add nav-ctive to display drop down navigation
+
+        &.nav-active {
+          height: calc(100vh - 170px);
+          padding-top: 15%;
+          transition: height 0.5s ease-in;
+          top: 85px;
+
+          & > li {
+            height: calc(60vh / 8);
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

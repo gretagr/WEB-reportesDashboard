@@ -1,0 +1,55 @@
+@import "mixins";
+@import "variables";
+
+// normalize
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// base styles ot the webpage
+
+body {
+  font-family: $nunito;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-normal;
+  color: $dark-grey;
+  background-color: $background-grey;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+/* ===================================================================
+==================== POSTS CONTAINER ==============
+=================*/
+
+.search-results {
+  width: 100%;
+  padding: $main-spacing-bottom-top $main-spacing-sides;
+  font-weight: $font-weight-bold;
+
+  .results-container {
+  @include flex-space-between;
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: $phone) {
+  padding: $main-spacing-bottom-top;
+  }
+}

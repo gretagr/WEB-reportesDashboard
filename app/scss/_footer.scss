@@ -1,0 +1,51 @@
+@import "mixins";
+@import "variables";
+
+/* ===================================================================
+========================= FOOTER STYLES ==============================*/
+
+footer {
+  @include flex-space-between;
+  padding: $main-spacing-bottom-top $main-spacing-sides;
+  background-color: #EDEFF3;
+  width: 100%;
+  color:  #A7A8AF;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-normal;
+
+  @media (max-width: $tablet) {
+  justify-content: center;
+  }
+
+  // footer navigation links
+
+  ul {
+    list-style-type: none;
+
+    @media (max-width: $tablet) {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 15px;
+
+      @media (max-width: $tablet) {
+      display: block;
+      margin: 0;
+      }
+
+      a {
+        color:  $light-grey;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &:hover {
+        color: darken($light-grey, 15%);
+        transition: color 0.3s ease;
+        }
+      }
+    }
+  }
+}
