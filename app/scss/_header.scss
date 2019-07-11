@@ -225,7 +225,7 @@ header {
             height: calc(60vh / 8);
             display: block;
           }
-
+          //
           @media (max-width: $phone) {
             @supports (-webkit-appearance:none) {
               .os-android & {
