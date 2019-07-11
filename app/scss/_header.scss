@@ -221,17 +221,14 @@ header {
           height: calc(100vh - 169px);
           transition: height 0.5s ease-in;
 
-          @media (max-width: $phone) {
-            @supports (-webkit-appearance:none) {
-              .os-android & {
-                height: calc(100vh - 225px);
-              }
-            }
-          }
+
 
           & > li {
             height: calc(60vh / 8);
             display: block;
+            @media (max-width: $phone) {
+              padding-bottom: calc(10% + 56px);
+            }
           }
 
         }
