@@ -224,11 +224,11 @@ header {
           @media (max-width: $phone) {
             @supports (-webkit-appearance:none) {
               .os-android & {
-                min-height: calc(100vh - 225px);
+                height: calc(100vh - 225px);
               }
             }
           }
-          
+
           & > li {
             height: calc(60vh / 8);
             display: block;
