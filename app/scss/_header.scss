@@ -226,9 +226,11 @@ header {
           & > li {
             height: calc(60vh / 8);
             display: block;
+            &:last-child {
             @media (max-width: $phone) {
               padding-bottom: calc(10% + 56px);
             }
+          }
           }
 
         }
