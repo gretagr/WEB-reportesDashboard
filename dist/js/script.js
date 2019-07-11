@@ -64,7 +64,7 @@ const createPost = () => {
     {
       name: 'Eduardo H.',
       nickname: '@eduaroh53',
-      image: '/dist/images/profile.png',
+      image: 'dist/images/profile.png',
       date: 'Hace 2 dias',
       message: 'Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible',
       tag:  '@GobiernoAcapozalcoOficial'
