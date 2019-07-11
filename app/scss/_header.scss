@@ -200,7 +200,7 @@ header {
     ul {
       background-color: $dark-grey;
       width: 100%;
-      top: 85px;
+      top: 84px;
       height: 1px;
       flex-direction: column;
       align-items: flex-end;
@@ -218,12 +218,20 @@ header {
         // add nav-ctive to display drop down navigation
 
         &.nav-active {
-          height: calc(100vh - 170px);
+          height: calc(100vh - 169px);
           transition: height 0.5s ease-in;
 
           & > li {
             height: calc(60vh / 8);
             display: block;
+          }
+
+          @media (max-width: $phone) {
+            @supports (-webkit-appearance:none) {
+              .os-android & {
+                min-height: calc(100vh - 225px);
+              }
+            }
           }
         }
       }
