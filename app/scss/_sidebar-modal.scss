@@ -39,27 +39,38 @@ aside {
   right: 0;
   transform: translateX(100%);
   transition: all .5s ease-in;
-
-  form {
-    width: 100%;
-  }
+  min-height: 100vh;
 
   @media (max-width: $phone) {
     padding: 20px 15px;
     width: 90%;
   }
 
+  @media (max-width: $tablet) {
+    transform: translateX(100%);
+    width: 85%;
+  }
+
+  form {
+    width: 100%;
+  }
+
   &.active { // show sidebar
     transform: translateX(0);
     transition: transform .5s ease-in;
+
     @media (max-width: $small-desktop) {
       width: 55%;
     }
+
     @media (max-width: $tablet) {
-      width: 85%;
-      top: 50px;
-      right: 7.5%;
+      width: 75%;
     }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+
   }
 
 
@@ -190,7 +201,7 @@ aside {
     width: 100%;
     height: 300px;
     border-radius: $border-radius-small;
-    background-image: url("images/map-placeholder.jpg");
+    background-image: url("images/map-placeholder.webp");
 
     .map-search {
       position: relative;

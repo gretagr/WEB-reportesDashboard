@@ -3,7 +3,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
 const autoprefixer = require('autoprefixer');
-// const cssnano = require('cssnano');
+const cssnano = require('cssnano');
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const replace = require('gulp-replace');
@@ -11,6 +11,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync');
+const babel = require('gulp-babel');
 
 // File path variables
 
@@ -37,7 +38,7 @@ function scssTask(){
   return src(files.scssPath)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss([ autoprefixer(), cssnano() ]))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist'))
     .pipe( browserSync.stream()
@@ -46,14 +47,16 @@ function scssTask(){
 
 // JS task
 
-// function jsTask() {
-//   return src(files.jsPath)
-//     .pipe(concat('scripts.js'))
-//     .pipe(uglify())
-//     .pipe(dest('dist'))
-//     .pipe( browserSync.stream()
-//   );
-// }
+function jsTask() {
+  return src(files.jsPath)
+    .pipe(babel({presets: ['@babel/preset-env']}))
+    .pipe(concat('scripts.js'))
+    .pipe(uglify())
+    .pipe(dest('dist'))
+    .pipe( browserSync.stream()
+  );
+}
+
 
 // Cachebusting task
 
@@ -69,15 +72,15 @@ function cacheBustTask() {
 // Watch task
 
 function watchTask(){
-  watch([files.scssPath, files.htmlPath],
-    parallel(browserSyncTask, scssTask)
+  watch([files.scssPath, files.jsPath, files.htmlPath],
+    parallel(browserSyncTask, scssTask, jsTask)
   );
 }
 
 // Default task
 
 exports.default = series(
-  parallel(browserSyncTask, scssTask),
+  parallel(browserSyncTask, scssTask, jsTask),
   cacheBustTask,
   watchTask
 );

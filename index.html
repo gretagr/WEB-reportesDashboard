@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Reportes Via Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Link To Google Fonts -------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=latin-ext" rel="stylesheet">
 
     <!-- Link To Main StyleSheet ------------------------------------>
-    <link rel="stylesheet" href="dist/style.css?cb=1562821181596">
+    <link rel="stylesheet" href="dist/style.css?cb=1562863369963">
 
     <!-- Link To Font Awesome  -------------------------------------->
     <script src="https://kit.fontawesome.com/3a0cdd4eca.js"></script>
+
   </head>
 
   <body>
@@ -31,7 +32,7 @@
         <!-- User Area ----------------------------------------------->
 
         <div class="profile">
-          <img class="profile-image" src="dist/images/profile1.png" alt="">
+          <img class="profile-image" src="dist/images/profile1.webp" alt="user profile image">
           <p>Maria Rosario</p>
           <span class="profile-arrow"></span>
         </div>
@@ -70,7 +71,7 @@
                 <!-- user information, Autoreply checkbox ----------------------->
                 <div class="input-wrapper">
                   <div class="twitter-user">
-                    <img class="twitter-user-image" src="dist/images/profile.png">
+                    <img class="twitter-user-image" src="dist/images/profile.webp" alt="user-profile-image">
                     <p class="user-name">Eduardo H. <br >
                       <span class="user-nickname">@eduaroh53</span>
                     </p>
@@ -90,7 +91,6 @@
 
                 <p class="form-field-description">Describe la situacion de manera breve</p>
                 <textarea name="description" placeholder="Escribe una description del problema"></textarea>
-
                 <!-- Select Date ----------------------------------------------->
                 <p class="form-field-description">Fecha</p>
                 <div class="input-wrapper">
@@ -108,7 +108,7 @@
                   <div class="map-marker">
                     <i class="fas fa-exclamation-triangle"></i>
                   </div>
-                    <input class="map-search" type="text" name="location-search" placeholder="Escribe la direcction">
+                    <input class="map-search" id="map-search" type="text" name="location-search" placeholder="Escribe la direcction">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
 
@@ -129,7 +129,7 @@
         <p class="search-description">Encuaentra hashtags o menciones a otras cuentas para generar un reporte.</p>
         <p class="search-name">Buscar tweets</p>
         <form action="" id="search">
-          <input type="text" name="hashtags" placeholder="@delegaciontlalpan">
+          <input type="text" name="hashtags" placeholder="@delegaciontlalpan" id="search-input">
           <input type="submit" name="search-hashtags" value="Buscar Tweets">
         </form>
       </section>
@@ -189,6 +189,6 @@
 
     <!-- Link To JavaScript file ------------------------------------>
 </div>
-    <script src="dist/js/script.js"></script>
+    <script src="dist/scripts.js?cb=1562863369963"></script>
   </body>
 </html>
