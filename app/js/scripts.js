@@ -13,14 +13,15 @@ const navigation = () => {
     // animate links
 
     setTimeout( () => {
-      navItems.forEach((link, index) => {
-        if (link.style.animation) {
-          link.style.animation = ``;
-        }
-        else {
-          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 4}s`;
-        }
-      });
+      
+      for (let i = 0; i < navItems.length; i++) {
+        if (navItems[i].style.animation) {
+            navItems[i].style.animation = ``;
+          }
+          else {
+            navItems[i].style.animation = `navLinkFade 0.5s ease forwards ${i / 4}s`;
+          }
+      }
     }, 500);
 
     // menu icon animation
@@ -50,12 +51,11 @@ let post;
   const overlay = document.getElementById('overlay');
 
   // event listener for buttons that opens sidebar
-  buttons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-      openSidebar();
-    });
-  });
 
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+    openSidebar();
+  })};
   // event listener for button that closes sidebar
   close.addEventListener('click', () => {
     closeSidebar();
@@ -75,7 +75,7 @@ const createPost = () => {
     {
       name: 'Eduardo H.',
       nickname: '@eduaroh53',
-      image: 'dist/images/profile.webp',
+      image: 'dist/images/profile.png',
       date: 'Hace 2 dias',
       message: 'Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible',
       tag:  '@GobiernoAcapozalcoOficial'
