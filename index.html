@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Reportes Via Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scalable=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!-- Link To Google Fonts -------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=latin-ext" rel="stylesheet">
 
     <!-- Link To Main StyleSheet ------------------------------------>
-    <link rel="stylesheet" href="dist/style.css?cb=1562796249891">
+    <link rel="stylesheet" href="dist/style.css?cb=1562821181596">
 
     <!-- Link To Font Awesome  -------------------------------------->
     <script src="https://kit.fontawesome.com/3a0cdd4eca.js"></script>
@@ -42,7 +42,7 @@
 
           <ul id="main-nav">
             <li class="nav-item" ><a href="#">Dashboard</a></li>
-            <li class="nav-item" ><a href="#" class="active">Reportes</a></li>
+            <li class="nav-item active" ><a href="#">Reportes</a></li>
             <li class="nav-item" ><a href="#">Tweets</a></li>
             <li class="nav-item" ><a href="#">Transparencia</a></li>
             <li class="nav-item" ><a href="#">Comunicados</a></li>
@@ -60,64 +60,65 @@
 
       <!-- Sliding sidebar -------------------------------------------------->
 
-              <aside id="sidebar">
+            <aside id="sidebar">
 
-                <!-- sidebar close button -->
-                <div class="close-button"><span id="close" class="close"></span></div>
+              <!-- sidebar close button -->
+              <div class="close-button"><span id="close" class="close"></span></div>
               <h2>Creacion de Reporte</h2>
               <p class="form-field-description">Usuario del reporte</p>
+              <form id="report" action="">
+                <!-- user information, Autoreply checkbox ----------------------->
+                <div class="input-wrapper">
+                  <div class="twitter-user">
+                    <img class="twitter-user-image" src="dist/images/profile.png">
+                    <p class="user-name">Eduardo H. <br >
+                      <span class="user-nickname">@eduaroh53</span>
+                    </p>
+                  </div>
 
-              <!-- user information, Autoreply checkbox ----------------------->
-              <div class="input-wrapper">
-                <div class="twitter-user">
-                  <img class="twitter-user-image" src="dist/images/profile.png">
-                  <p class="user-name">Eduardo H. <br >
-                    <span class="user-nickname">@eduaroh53</span>
-                  </p>
+                  <label class="autoreply"><span class="name">Autoresponder a usuario</span>
+                    <input type="checkbox" name="autoreply" checked="checked">
+                    <span class="check-icon"></span>
+                  </label>
                 </div>
 
-                <label class="autoreply"><span class="name">Autoresponder a usuario</span>
-                  <input type="checkbox" name="autoreply" checked="checked">
-                  <span class="check-icon"></span>
-                </label>
-              </div>
+                <!-- Select Category ------------------------------------------->
+                <p class="form-field-description">¿En que te podemos ayudar?</p>
+                <button><i class="fas fa-exclamation-circle"></i>Selecciona una categoria</button>
 
-              <!-- Select Category ------------------------------------------->
-              <p class="form-field-description">¿En que te podemos ayudar?</p>
-              <button><i class="fas fa-exclamation-circle"></i>Selecciona una categoria</button>
+                <!-- Report Description ---------------------------------------->
 
-              <!-- Report Description ---------------------------------------->
+                <p class="form-field-description">Describe la situacion de manera breve</p>
+                <textarea name="description" placeholder="Escribe una description del problema"></textarea>
 
-              <p class="form-field-description">Describe la situacion de manera breve</p>
-              <textarea name="description" placeholder="Escribe una description del problema"></textarea>
-
-              <!-- Select Date ----------------------------------------------->
-              <p class="form-field-description">Fecha</p>
-              <div class="input-wrapper">
-                <label class="autoreply"><span class="name">Sucedio Hoy</span>
-                  <input type="checkbox" name="happened-today" checked="checked">
-                  <span class="check-icon"></span>
-                </label>
-                <button class="date"><i class="fas fa-calendar-day"></i> Seleccionar otra Fecha <span class="arrow"></span></button>
-              </div>
-
-              <!-- Select Place ----------------------------------------------->
-              <p class="form-field-description">Direccion</p>
-
-              <div class="map-container">
-                <div class="map-marker">
-                  <i class="fas fa-exclamation-triangle"></i>
+                <!-- Select Date ----------------------------------------------->
+                <p class="form-field-description">Fecha</p>
+                <div class="input-wrapper">
+                  <label class="autoreply"><span class="name">Sucedio Hoy</span>
+                    <input type="checkbox" name="happened-today" checked="checked">
+                    <span class="check-icon"></span>
+                  </label>
+                  <button class="date"><i class="fas fa-calendar-day"></i> Seleccionar otra Fecha <span class="arrow"></span></button>
                 </div>
-                  <input class="map-search" type="text" name="location-search" placeholder="Escribe la direcction">
-                  <i class="fas fa-map-marker-alt"></i>
-              </div>
 
-              <!-- Photos ----------------------------------------------->
+                <!-- Select Place ----------------------------------------------->
+                <p class="form-field-description">Direccion</p>
 
-              <p class="form-field-description">Fotografias</p>
-              <p class="centered-text">Sin Fotografias</p>
+                <div class="map-container">
+                  <div class="map-marker">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                    <input class="map-search" type="text" name="location-search" placeholder="Escribe la direcction">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
 
-              <input class="submit-sidebar-form" type="submit" name="send-report" value="Crear Reporte">
+                <!-- Photos ----------------------------------------------->
+
+                <p class="form-field-description">Fotografias</p>
+                <p class="centered-text">Sin Fotografias</p>
+
+                <input class="submit-sidebar-form" type="submit" name="send-report" value="Crear Reporte">
+              </form>
             </aside>
 
 <!-- End Of sidebar --------------------------------------------------->
@@ -125,10 +126,12 @@
 
       <section class="search-tweets">
         <h1>REPORTES VIA TWITTER</h1>
-        <p class="search-description">Encuaentra hashtags o menciones a otras cuentas para generar un reporte.<p>
+        <p class="search-description">Encuaentra hashtags o menciones a otras cuentas para generar un reporte.</p>
         <p class="search-name">Buscar tweets</p>
-        <input type="text" name="hashtags" placeholder="@delegaciontlalpan">
-        <input type="submit" name="search-hashtags" value="Buscar Tweets">
+        <form action="" id="search">
+          <input type="text" name="hashtags" placeholder="@delegaciontlalpan">
+          <input type="submit" name="search-hashtags" value="Buscar Tweets">
+        </form>
       </section>
 
 <!-- Search results section -------------------------------------->

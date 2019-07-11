@@ -15,7 +15,6 @@ header {
   width: 100%;
   @include flex-space-between;
   background-color: $background-white;
-
 /* ========== 1. LOGO AREA ========== */
 
   .logo {
@@ -66,7 +65,7 @@ header {
     // hide profile name and dropdow when on mobile.
     @media (max-width: $phone) {
       margin-right: 15px;
-      
+
       p,
       .profile-arrow {
         display: none;
@@ -101,15 +100,17 @@ header {
     font-size: $font-size-small;
     font-weight: $font-weight-normal;
     @include flex-start;
+    align-items: center;
     background-color: $dark-grey;
 
     ul {
+      position: absolute;
+      left: 0;
       margin: 0;
       padding: 0;
       @include flex-start;
       align-items: center;
       list-style-type: none;
-      height: 85px;
       padding-left: $main-spacing-sides;
 
       li {
@@ -142,7 +143,7 @@ header {
   .menu {
     position: relative;
     cursor: pointer;
-    top: -29px;
+    top: -22px;
     display: none;
     height: 26px;
     width: 26px;
@@ -197,29 +198,28 @@ header {
     padding-right: 30px;
 
     ul {
-      position: absolute;
       background-color: $dark-grey;
       width: 100%;
+      top: 85px;
+      height: 1px;
       flex-direction: column;
       align-items: flex-end;
-      right: 0;
-      padding: 0;
-      margin: 0;
-      height: 0;
-      transition: height 0.5s ease-in;
+      justify-content: flex-end;
+      transition: all 0.5s ease-in;
 
         li {
         opacity: 0;
         padding-right: 30px;
         display: none;
+        &:last-child {
+          padding-bottom: 12%;
+        }
         }
         // add nav-ctive to display drop down navigation
 
         &.nav-active {
           height: calc(100vh - 170px);
-          padding-top: 15%;
           transition: height 0.5s ease-in;
-          top: 85px;
 
           & > li {
             height: calc(60vh / 8);

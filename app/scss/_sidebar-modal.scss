@@ -23,6 +23,7 @@
   opacity: 0.8;
   transition: opacity 0.8s ease;
   display: none;
+  z-index: 99;
 }
 
 aside {
@@ -38,6 +39,10 @@ aside {
   right: 0;
   transform: translateX(100%);
   transition: all .5s ease-in;
+
+  form {
+    width: 100%;
+  }
 
   @media (max-width: $phone) {
     padding: 20px 15px;
@@ -82,6 +87,13 @@ aside {
 
   @include custom-checkbox;
 
+  button, textarea, input {
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
   button {
     background: none;
     border: 1px solid $light-grey;
@@ -113,6 +125,11 @@ aside {
     font-size: $font-size-medium;
     font-weight: $font-weight-normal;
     color: $dark-grey;
+    &:focus{
+      &::placeholder {
+      color: $light-grey;
+    }
+  }
   }
 
   .date {
@@ -187,6 +204,11 @@ aside {
       font-size: $font-size-medium;
       font-weight: $font-weight-normal;
       color: $dark-grey;
+      &:focus{
+        &::placeholder {
+        color: $light-grey;
+      }
+    }
       }
 
       i {
@@ -275,8 +297,4 @@ aside {
       transition: background-color 0.3s ease;
     }
   }
-}
-
-.sidebar-active {
-
 }

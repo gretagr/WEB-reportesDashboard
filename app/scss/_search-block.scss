@@ -28,8 +28,13 @@ h1 {
 
   .search-description {
     color: $light-grey;
+    margin-top: 5px;
   }
 
+  .search-name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 
   input {
     height: 75px;
@@ -41,7 +46,6 @@ h1 {
     &:active {
       outline: none;
     }
-
   }
 
   input[type="text"] {
@@ -53,6 +57,12 @@ h1 {
     &::placeholder {
       color: $dark-grey;
     }
+
+    &:focus{
+      &::placeholder {
+      color: $light-grey;
+    }
+  }
 
     @media (max-width: $tablet) {
       width: 100%;
@@ -67,6 +77,11 @@ h1 {
     background: $blue;
     border: 1px solid $blue;
     color: #fff;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: darken($blue, 15%);
+      transition: background-color 0.3s ease;
+    }
 
     @media (max-width: $tablet) {
       margin-top: $main-spacing-bottom-top;

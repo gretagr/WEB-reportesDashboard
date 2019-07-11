@@ -1,3 +1,4 @@
+
 /* ============ MENU TOGGLE FUNCTION =========== */
 
 const navigation = () => {
@@ -29,34 +30,44 @@ const navigation = () => {
 }
 
 
-/* ============ CREATE & ADD TWITTER POSTS =========== */
+/* ============ ADD TWITTER POSTS =========== */
 
 const populatePosts = () => {
 
+// create posts
 const container = document.getElementById('search-results');
 let post;
 
   for (let i = 0; i < 9; i++) {
-    post = createPost();
-    container.innerHTML += post;
+      post = createPost();
+      container.innerHTML += post;
   }
-  const overlay = document.getElementById("overlay");
-  const openSidebar = document.querySelectorAll('.create-report');
-  const sidebar = document.getElementById('sidebar');
 
+  // add event listeners to open & close sidebar
+
+  const buttons = document.querySelectorAll('.create-report');
   const close = document.getElementById('close');
-
-  openSidebar.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      sidebar.classList.add('active');
+  const overlay = document.getElementById('overlay');
+  
+  // event listener for buttons that opens sidebar
+  buttons.forEach(function (btn) {
+  btn.addEventListener('click', () => {
+      openSidebar();
     });
-  })
+  });
 
-  close.addEventListener('click', function () {
-    sidebar.classList.remove('active');
+  // event listener for button that closes sidebar
+  close.addEventListener('click', () => {
+    closeSidebar();
+  });
+
+  //add click event for overlay (to close the sidebar)
+  overlay.addEventListener('click', () => {
+    closeSidebar();
   })
 }
 
+/* ============ CREATE TWITTER POSTS =========== */
 
 const createPost = () => {
 
@@ -64,7 +75,7 @@ const createPost = () => {
     {
       name: 'Eduardo H.',
       nickname: '@eduaroh53',
-      image: '/dist/images/profile.png',
+      image: 'dist/images/profile.png',
       date: 'Hace 2 dias',
       message: 'Responde desde hace 3 semanas la fuga y aun no me dan servicio. Horrible',
       tag:  '@GobiernoAcapozalcoOficial'
@@ -96,14 +107,54 @@ const createPost = () => {
 
 /* ============ SIDEBAR FUNCTIONS =========== */
 
+// set scroll position
+window.addEventListener('scroll', () => {
+document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+});
+
+// open sidebar
+const openSidebar = () => {
+
+  const overlay = document.getElementById("overlay");
+  const sidebar = document.getElementById('sidebar');
+
+  overlay.style.display = "block";
+  sidebar.classList.add('active');
+
+  // fix body to it's scroll position
+  const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+  const body = document.body;
+  body.style.position = "fixed";
+  body.style.top = `-${scrollY}`;
+
+}
 
 
-/* ============ INVOKE ALL FUNCTIONS =========== */
+
+const closeSidebar = () => {
+  const overlay = document.getElementById("overlay");
+  const sidebar = document.getElementById('sidebar');
+
+  sidebar.classList.remove('active');
+  overlay.style.display = "none";
+
+  //release body back to it's scroll position
+  const body = document.body;
+  const scrollY = body.style.top;
+
+  body.style.position = '';
+  body.style.top = '';
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+}
+
+
+
+/* ============ INVOKE FUNCTIONS =========== */
 
 const app = () => {
   populatePosts();
   navigation();
-
 }
 
 app();

@@ -29,6 +29,15 @@ body {
   background-color: $background-grey;
 }
 
+input,
+textarea,
+button,
+select,
+.close-button,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .wrapper {
   overflow-x: hidden;
 }

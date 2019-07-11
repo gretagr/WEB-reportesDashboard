@@ -28,8 +28,8 @@
     transition: background-color 0.3s ease;
     @include flex-centered;
 
-    @media (max-width: $tablet) {
-      padding: 10px 15px;
+    @media (max-width: $phone) {
+      margin: 5px;
     }
 
     &:hover {
