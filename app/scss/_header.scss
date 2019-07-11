@@ -221,11 +221,6 @@ header {
           height: calc(100vh - 169px);
           transition: height 0.5s ease-in;
 
-          & > li {
-            height: calc(60vh / 8);
-            display: block;
-          }
-          //
           @media (max-width: $phone) {
             @supports (-webkit-appearance:none) {
               .os-android & {
@@ -233,6 +228,12 @@ header {
               }
             }
           }
+          
+          & > li {
+            height: calc(60vh / 8);
+            display: block;
+          }
+
         }
       }
     }
